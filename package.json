@@ -1,0 +1,19 @@
+{
+  "name": "visitamedica",
+  "version": "0.0.2",
+  "description": "",
+  "main": "VisitaMedica.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/0m4r/visitamedica.git"
+  },
+  "author": "omar adobati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/0m4r/visitamedica/issues"
+  },
+  "homepage": "https://bitbucket.org/0m4r/visitamedica#readme"
+}
