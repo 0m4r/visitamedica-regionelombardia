@@ -27,7 +27,7 @@ function processData(data) {
         $(this).find(".CAP").html(atleta[6]);
         $(this)
           .find(".Indirizzo")
-          .html((atleta[7] + (", " + atleta[8] || "")).replace(/"/g, ""));
+          .html(((atleta[7] || "") + ', ' + ((atleta[8]?.trim() || ""))));
 
         $(this).find(".CodiceFiscale").html(atleta[2]);
       });
