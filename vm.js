@@ -30,6 +30,7 @@ function processData(data) {
           .html(((atleta[7] || "") + ', ' + ((atleta[8]?.trim() || ""))));
 
         $(this).find(".CodiceFiscale").html(atleta[2]);
+        $(this).find(".IndirizzoPec").html(atleta[9]);
       });
     })(i);
   }
