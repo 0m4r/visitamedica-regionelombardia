@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 interface Atleta {
   cognome: string;
   nome: string;
