@@ -1,4 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { promises as fs } from "fs";
+import path from "path";
 
 // Helper to parse CSV into array of objects (basic, for simple CSVs)
 function parseCSV(csv: string) {
@@ -14,12 +16,14 @@ function parseCSV(csv: string) {
   });
 }
 
-export async function GET(req: NextRequest) {
-  const response = await fetch(`${req.nextUrl.origin}/example.csv`)
-  if (!response.ok) {
-    return NextResponse.error()
+export async function GET() {
+  try {
+    const filePath = path.join(process.cwd(), "public", "example.csv");
+    const csvData = await fs.readFile(filePath, "utf-8");
+    const atleti = parseCSV(csvData);
+    return NextResponse.json({ atleti });
+  } catch (error) {
+    console.error("Error reading CSV file:", error);
+    return NextResponse.json({ error: "Failed to read CSV file" }, { status: 500 });
   }
-  const csvData = await response.text()
-  const atleti = parseCSV(csvData);
-  return NextResponse.json({ atleti });
 }
