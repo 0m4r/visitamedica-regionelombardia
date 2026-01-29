@@ -20,7 +20,7 @@ export default function Home() {
   const [atleti, setAtleti] = useState<Atleta[]>([]);
   useEffect(() => {
     const fetchAtleti = async () => {
-      const response = await fetch("http://localhost:3000/api");
+      const response = await fetch("/api");
       if (response && !response.ok) {
         return "error";
       }
