@@ -1,0 +1,19 @@
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .print-root {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .print-root * {
+    color: #000000 !important;
+  }
+}

@@ -1,12 +1,21 @@
+"use client";
+
+import { useId } from "react";
 import Image from "next/image";
 import type { Atleta, SocietaInfo } from "@/types/atleta";
 
 interface AtletaFormProps {
   atleta: Atleta;
   societaInfo: SocietaInfo;
+  logoPreload?: boolean;
 }
 
-export function AtletaForm({ atleta, societaInfo }: AtletaFormProps) {
+export function AtletaForm({
+  atleta,
+  societaInfo,
+  logoPreload = false,
+}: AtletaFormProps) {
+  const checkboxId = useId();
   const {
     societa,
     sede,
@@ -23,8 +32,8 @@ export function AtletaForm({ atleta, societaInfo }: AtletaFormProps) {
   } = societaInfo;
 
   return (
-    <div>
-      <table className="w-full border-collapse">
+    <div className=" bg-white text-black max-w-[240mm] m-auto p-2">
+      <table className="w-full border-collapse" role="presentation">
         <tbody>
           <tr>
             <td colSpan={2} className="align-top text-left">
@@ -33,6 +42,8 @@ export function AtletaForm({ atleta, societaInfo }: AtletaFormProps) {
                 height={100}
                 src={logoSrc}
                 alt="Logo Regione Lombardia"
+                sizes="20vw"
+                preload={logoPreload}
                 className="w-1/5 border-0 text-left"
               />
             </td>
@@ -135,25 +146,27 @@ export function AtletaForm({ atleta, societaInfo }: AtletaFormProps) {
             <td className="align-top text-left w-1/2">
               <div className="relative pl-6 flex items-center gap-2">
                 <input
+                  id={`${checkboxId}-prima`}
                   type="checkbox"
                   checked={primaAffiliazione}
                   readOnly
-                  aria-label="Prima Affiliazione"
                   className="border-2 border-black w-4 h-4 absolute top-0 left-0 accent-blue-600"
                 />
-                <label className="ml-2">Prima Affiliazione</label>
+                <label htmlFor={`${checkboxId}-prima`} className="ml-2">
+                  Prima Affiliazione
+                </label>
               </div>
             </td>
             <td className="align-top text-left w-1/2">
               <div className="relative pl-6 flex items-center gap-2">
                 <input
+                  id={`${checkboxId}-rinnovo`}
                   type="checkbox"
                   checked={rinnovo}
                   readOnly
-                  aria-label="Rinnovo"
                   className="border-2 border-black w-4 h-4 absolute top-0 left-0 accent-blue-600"
                 />
-                <label className="ml-2">
+                <label htmlFor={`${checkboxId}-rinnovo`} className="ml-2">
                   Rinnovo (allegare ultimo certificato in originale in possesso
                   dell&apos;atleta)
                 </label>
@@ -167,7 +180,7 @@ export function AtletaForm({ atleta, societaInfo }: AtletaFormProps) {
             <td className="align-middle text-center">
               <i className="text-xs">(Firma del Presidente)</i>
               <br />
-              _____________________________________________
+              _________________________
             </td>
           </tr>
           <tr>
