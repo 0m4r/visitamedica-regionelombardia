@@ -1,0 +1,11 @@
+cognome,nome,luogoNascita,dataNascita,residenteA,cap,indirizzo,numeroCivico,codiceFiscale,indirizzoPec
+Rossi,Mario,Bergamo,2005-03-12,Milano,20100,Via Roma, 1,RSSMRA05C12A794X,mario.rossi@pec.it
+Bianchi,Luca,Brescia,2007-11-23,Brescia,25100,Via Milano, 10,BNCLCU07S23B157Y,luca.bianchi@pec.it
+Verdi,Giulia,Lecco,2006-06-30,Lecco,23900,Via Lecco, 5,VRDGLI06H70E507Z,giulia.verdi@pec.it
+Neri,Alessandro,Como,2004-09-15,Como,22100,Via Como, 12,NREALN04P15C933T,alessandro.neri@pec.it
+Russo,Francesca,Bergamo,2008-02-28,Bergamo,24100,Via Bergamo, 8,RSSFNC08B68A794Y,francesca.russo@pec.it
+Ferrari,Marco,Milano,2005-12-05,Milano,20121,Corso Italia, 3,FRRMRC05T05F205Z,marco.ferrari@pec.it
+Esposito,Sara,Brescia,2006-07-19,Brescia,25122,Via Dante, 7,SPSRRA06L59B157U,sara.esposito@pec.it
+Colombo,Elena,Lecco,2007-04-10,Lecco,23900,Via Lago, 2,CLMLNE07D50E507V,elena.colombo@pec.it
+Ricci,Andrea,Como,2005-11-01,Como,22100,Via Volta, 15,RCCNDR05S01C933Q,andrea.ricci@pec.it
+Gallo,Martina,Milano,2008-08-22,Milano,20133,Via Lambrate, 9,GLLMRT08M62F205X,martina.gallo@pec.it
