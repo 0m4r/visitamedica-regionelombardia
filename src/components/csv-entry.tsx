@@ -273,14 +273,14 @@ export function CsvEntry() {
                   </Button>
                 </div>
               </div>
-              <div className="max-h-[60vh] overflow-auto rounded-md border border-neutral-200">
+              <form className="max-h-[60vh] overflow-auto rounded-md border border-neutral-200" autoComplete="off">
                 <Table>
                   <caption className="sr-only">
                     Anteprima dati atleti da CSV
                   </caption>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="w-[90px]">Seleziona</TableHead>
+                      <TableHead className="w-22.5">Seleziona</TableHead>
                       {atletaColumns.map((column) => (
                         <TableHead key={column.key}>{column.label}</TableHead>
                       ))}
@@ -330,8 +330,10 @@ export function CsvEntry() {
                                     event.target.value
                                   )
                                 }
+                                name={`${column.key}-${index}`}
                                 aria-label={`${column.label} (${rowLabel})`}
-                                className="min-w-[10rem]"
+                                className="min-w-40"
+                                autoComplete="off"
                               />
                             </TableCell>
                           ))}
@@ -340,7 +342,7 @@ export function CsvEntry() {
                     })}
                   </TableBody>
                 </Table>
-              </div>
+              </form>
             </>
           )}
         </CardContent>
